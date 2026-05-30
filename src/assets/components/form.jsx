@@ -92,7 +92,7 @@ function Form() {
                 <option value="6"> Mongo db </option>
               </optgroup>
 
-            </select> <br />
+            </select> <br /> <br />
 
             <label htmlFor="textarea"> About </label> <br />
             <textarea id="textarea" name="textarea" placeholder="About yourself" value={textarea} onChange={(e) => settextarea(e.target.value)}></textarea>
