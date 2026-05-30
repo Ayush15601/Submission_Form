@@ -11,6 +11,8 @@ function Form() {
   const [sub, setsub] = useState({maths: true, hindi: false, english: false})
   const [resume, setresume] = useState("")
   const [url, seturl] = useState("")
+  const [option, setoption] = useState("")
+  const [textarea, settextarea] = useState("")
 
 
   const changetick = (subj) => {
@@ -53,6 +55,29 @@ function Form() {
 
             <br /> <label htmlFor="url"> Enter URL </label> 
             <input type="url" id="url" name="url" value={url} onChange={(e) => seturl(e.target.value)}/>
+
+            <label htmlFor="select"> Select your choise </label>
+            <select id="select" name="select" value={option} onChange={(e) => setoption(e.target.value)}>
+
+            <option disabled value=""> Select </option>
+              
+              <optgroup label="beginer">
+                <option value="1"> HTML </option>
+                <option value="2"> CSS </option>
+                <option value="3"> JS </option>
+              </optgroup>
+
+               <optgroup label="Advace">
+                <option value="4"> React </option>
+                <option value="5"> Node js </option>
+                <option value="6"> Mongo db </option>
+              </optgroup>
+
+            </select> <br />
+
+            <label htmlFor="textarea"> About </label> <br />
+            <textarea id="textarea" name="textarea" placeholder="About yourself" value={textarea} onChange={(e) => settextarea(e.target.value)}></textarea>
+            
 
 
 
