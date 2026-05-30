@@ -21,10 +21,29 @@ function Form() {
 
   }
 
+  const formsubmit = (e) => {
+    e.preventdefault
+    console.log( firstname, lastname, email, contact, gender, sub, resume, option, textarea )
+  }
+
+  const allreset = () => {
+
+    setfirstname("")
+    setlastame("")
+    setemail("")
+    setcontact("")
+    setgender("")
+    setsub({maths: true, hindi: false, english: false})
+    setcontact("")
+    seturl("")
+    setoption("")
+    settextarea("")
+  }
+
     return(
         
         <>
-        <form action="#" method="get" className="f_form">
+        <form action="#" method="get" className="f_form" onSubmit={formsubmit}>
             
             <label htmlFor="firstname"> First Name* </label> 
             <input type="text" id="firstname" placeholder="Enter your name" name="firstname" value={firstname} onChange={ (e) => setfirstname(e.target.value)} />
@@ -77,11 +96,12 @@ function Form() {
 
             <label htmlFor="textarea"> About </label> <br />
             <textarea id="textarea" name="textarea" placeholder="About yourself" value={textarea} onChange={(e) => settextarea(e.target.value)}></textarea>
-            
 
-
-
-        
+            <div className="btns">
+              <button type="submit" className="submit"> Submit </button>
+              <button type="submit" className="reset" onClick={allreset}> Reset </button>
+            </div>
+      
         </form>
         
         
